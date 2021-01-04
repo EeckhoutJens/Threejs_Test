@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>three.js test - boxes</title>
+  <title>three.js ar - cones</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link type="text/css" rel="stylesheet" href="main.css">
@@ -14,8 +14,8 @@
 
 <script type="module">
 
-  import * as THREE from './Build/three.module.js';
-  import { ARButton } from './Build/ARButton.js';
+  import * as THREE from '../build/three.module.js';
+  import { ARButton } from './jsm/webxr/ARButton.js';
 
   let camera, scene, renderer;
   let controller;
@@ -45,7 +45,9 @@
     container.appendChild( renderer.domElement );
 
     //
+
     document.body.appendChild( ARButton.createButton( renderer ) );
+
     //
 
     const geometry = new THREE.CylinderBufferGeometry( 0, 0.05, 0.2, 32 ).rotateX( Math.PI / 2 );
