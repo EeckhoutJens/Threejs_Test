@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>three.js ar - cones</title>
+  <title>three.js test - boxes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link type="text/css" rel="stylesheet" href="main.css">
@@ -13,12 +13,14 @@
 </div>
 
 <script type="module">
+  //Example code from three.js documentation
+  //Slight adjustments were made to change functionality and try some things out
 
   import * as THREE from './Build/three.module.js';
   import { ARButton } from './Build/ARButton.js';
 
   let camera, scene, renderer;
-  let controller;
+  let xrController;
 
   init();
   animate();
@@ -48,7 +50,7 @@
     document.body.appendChild( ARButton.createButton( renderer ) );
     //
 
-    const geometry = new THREE.CylinderBufferGeometry( 0, 0.05, 0.2, 32 ).rotateX( Math.PI / 2 );
+    const geometry = new THREE.BoxBufferGeometry( 2,6,2).rotateY( Math.PI / 2 );
 
     function onSelect() {
 
@@ -60,9 +62,9 @@
 
     }
 
-    controller = renderer.xr.getController( 0 );
-    controller.addEventListener( 'select', onSelect );
-    scene.add( controller );
+    xrController = renderer.xr.getController( 0 );
+    xrController.addEventListener( 'select', onSelect );
+    scene.add( xrController );
 
     //
 
