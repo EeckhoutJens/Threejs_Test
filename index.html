@@ -46,10 +46,10 @@
 
     //
 
-    const geometry = new THREE.BoxBufferGeometry( GenerateRandomNr(0.1,0.3), GenerateRandomNr(0.1,0.3), GenerateRandomNr(0.1,0.3)).rotateX(Math.PI / GenerateRandomNr(1,4));
+
 
     function onSelect() {
-
+      const geometry = new THREE.BoxBufferGeometry( GenerateRandomNr(0.1,0.3), GenerateRandomNr(0.1,0.3), GenerateRandomNr(0.1,0.3)).rotateX(Math.PI / GenerateRandomNr(1,4));
       const material = new THREE.MeshPhongMaterial( { color: 0xffffff * Math.random() } );
       const mesh = new THREE.Mesh( geometry, material );
       mesh.position.set( 0, 0, - 0.3 ).applyMatrix4( controller.matrixWorld );
