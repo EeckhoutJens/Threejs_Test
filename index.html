@@ -50,7 +50,7 @@
 
     //
 
-    const geometry = new THREE.BoxBufferGeometry( 0.1, 0.3, 0.1).rotateX( Math.PI / 2 );
+    const geometry = new THREE.BoxBufferGeometry( GenerateRandomNr(0.1,0.3), GenerateRandomNr(0.1,0.3), GenerateRandomNr(0.1,0.3));
 
     function onSelect() {
 
@@ -83,18 +83,22 @@
 
   //
 
-  function animate() {
-
+  function animate()
+  {
     renderer.setAnimationLoop( render );
-
   }
 
-  function render() {
+  function render()
+  {
 
     renderer.render( scene, camera );
 
   }
 
+  function GenerateRandomNr(min,max)
+  {
+    return Math.random() * (max - min) + min;
+  }
 </script>
 </body>
 </html>
