@@ -13,14 +13,12 @@
 </div>
 
 <script type="module">
-  //Example code from three.js documentation
-  //Slight adjustments were made to change functionality and try some things out
 
   import * as THREE from './Build/three.module.js';
   import { ARButton } from './Build/ARButton.js';
 
   let camera, scene, renderer;
-  let xrController;
+  let controller;
 
   init();
   animate();
@@ -62,9 +60,9 @@
 
     }
 
-    xrController = renderer.xr.getController( 0 );
-    xrController.addEventListener( 'select', onSelect );
-    scene.add( xrController );
+    controller = renderer.xr.getController( 0 );
+    controller.addEventListener( 'select', onSelect );
+    scene.add( controller );
 
     //
 
